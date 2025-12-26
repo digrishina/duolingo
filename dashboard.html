@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles/dashboard.css" />
+</head>
+<body>
+  <div class="device">
+    <div class="screen">
+
+      <section class="intro">
+        <img class="intro__mascot" src="./assets/maskot.png" alt="maskot" />
+        <div class="bubble" role="status">
+          <p class="bubble__text">Let’s start your Learning</p>
+        </div>
+      </section>
+
+      <main class="grid">
+        <label class="tile tile--lessons">
+          <input class="tile__input" type="radio" name="mode" />
+          <div class="tile__box">
+            <div class="tile__icon">
+              <img src="./assets/lessons.png" alt="lessons">
+            </div>
+            <div class="tile__title">Lessons</div>
+          </div>
+        </label>
+
+        <label class="tile tile--quiz">
+          <input class="tile__input" type="radio" name="mode" />
+          <div class="tile__box">
+            <div class="tile__icon">
+              <img src="./assets/quiz.png" alt="quiz">
+            </div>
+            <div class="tile__title">Quiz</div>
+          </div>
+        </label>
+
+        <label class="tile tile--translate">
+          <input class="tile__input" type="radio" name="mode" />
+          <div class="tile__box">
+            <div class="tile__icon">
+              <img src="./assets/translate.png" alt="translate">
+            </div>
+            <div class="tile__title">Translate</div>
+          </div>
+        </label>
+
+        <label class="tile tile--library">
+          <input class="tile__input" type="radio" name="mode" />
+          <div class="tile__box">
+            <div class="tile__icon">
+              <img src="./assets/library.png" alt="library">
+            </div>
+            <div class="tile__title">Library</div>
+          </div>
+        </label>
+      </main>
+
+      <div class="cta">
+        <button class="btn btn--primary" type="button">CONTINUE</button>
+      </div>
+
+      <nav class="dock" aria-label="quick actions">
+  <button class="dock__btn" type="button" aria-label="Streak">
+    <img class="dock__icon" src="./assets/menu1.png" alt="Streak">
+  </button>
+  <button class="dock__btn" type="button" aria-label="Dictionary">
+    <img class="dock__icon" src="./assets/menu2.png" alt="Dictionary">
+  </button>
+  <button class="dock__btn" type="button" aria-label="Profile">
+    <img class="dock__icon" src="./assets/menu3.png" alt="Profile">
+  </button>
+  <button class="dock__btn" type="button" aria-label="Shield">
+    <img class="dock__icon" src="./assets/menu4.png" alt="Shield">
+  </button>
+  <button class="dock__btn" type="button" aria-label="Shop">
+    <img class="dock__icon" src="./assets/menu5.png" alt="Shop">
+  </button>
+  <button class="dock__btn" type="button" aria-label="Bell">
+    <img class="dock__icon" src="./assets/menu6.png" alt="Bell">
+  </button>
+</nav>
+
+    </div>
+  </div>
+ <script type="module" src="./scripts/dashboard/index.js"></script>
+</body>
+</html>
