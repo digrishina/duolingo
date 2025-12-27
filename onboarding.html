@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onboarding • Why are you learning?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/onboarding.css" />
+</head>
+<body>
+  <div class="device">
+    <div class="screen">
+
+      <header class="appbar">
+        <a class="back" href="#" aria-label="Go back">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+          <span class="progress__bar" style="width:20%"></span>
+        </div>
+
+        <span class="appbar__spacer" aria-hidden="true"></span>
+      </header>
+
+      <main class="content" role="main">
+        <div class="prompt">
+          <img class="prompt__mascot" src="./assets/maskot.png" alt="maskot" />
+          <h1 class="prompt__title">Why are you learning a language?</h1>
+        </div>
+
+        <form class="choices" action="#" method="post">
+  <label class="choice">
+    <input class="choice__input" type="radio" name="goal" value="travel">
+    <span class="choice__box">
+      <span class="choice__icon" aria-hidden="true">
+        <img src="./assets/travel.png" alt="travel">
+      </span>
+      <span class="choice__text">Prepare for travel</span>
+    </span>
+  </label>
+
+  <label class="choice">
+    <input class="choice__input" type="radio" name="goal" value="career">
+    <span class="choice__box">
+      <span class="choice__icon" aria-hidden="true">
+        <img src="./assets/career.png" alt="career">
+      </span>
+      <span class="choice__text">Boost my career</span>
+    </span>
+  </label>
+
+  <label class="choice">
+    <input class="choice__input" type="radio" name="goal" value="education">
+    <span class="choice__box">
+      <span class="choice__icon" aria-hidden="true">
+        <img src="./assets/education.png" alt="education">
+      </span>
+      <span class="choice__text">Support my education</span>
+    </span>
+  </label>
+
+  <label class="choice">
+    <input class="choice__input" type="radio" name="goal" value="people">
+    <span class="choice__box">
+      <span class="choice__icon" aria-hidden="true">
+        <img src="./assets/people.png" alt="people">
+      </span>
+      <span class="choice__text">Connect with people</span>
+    </span>
+  </label>
+
+  <label class="choice">
+    <input class="choice__input" type="radio" name="goal" value="fun">
+    <span class="choice__box">
+      <span class="choice__icon" aria-hidden="true">
+        <img src="./assets/fun.png" alt="fun">
+      </span>
+      <span class="choice__text">Just for fun</span>
+    </span>
+  </label>
+
+  <label class="choice">
+    <input class="choice__input" type="radio" name="goal" value="productive">
+    <span class="choice__box">
+      <span class="choice__icon" aria-hidden="true">
+        <img src="./assets/brain.png" alt="productive">
+      </span>
+      <span class="choice__text">Spend time productively</span>
+    </span>
+  </label>
+</form>
+      </main>
+
+      <footer class="bottombar">
+        <button class="cta" type="button" disabled>CONTINUE</button>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="./scripts/onboarding/index.js"></script>
+</body>
+</html>
