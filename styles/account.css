@@ -184,4 +184,38 @@ body{ margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto
     min-height:54px;
     font-size:17px;
   }
+  .input-row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.voice-btn{
+  width:44px;
+  height:44px;
+  border-radius: var(--radius-lg);
+  border:1px solid var(--card-border);
+  background:#F7F8FA;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  color:#7a7a7a;
+  flex:0 0 44px;
+}
+
+.voice-btn:hover{ background:#fff; }
+.voice-btn:focus-visible{ outline:none; box-shadow:var(--focus); }
+
+.voice-btn.recording{
+  background: var(--primary);
+  border-color: var(--primary-dark);
+  color:#fff;
+}
+
+.voice-btn:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+
 }

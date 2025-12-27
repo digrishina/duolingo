@@ -10,6 +10,85 @@ const del = qs(".link--danger");
 const back = qs(".back");
 
 const [nameInput, usernameInput, emailInput] = inputs;
+const voiceBtns = qsa(".voice-btn");
+const [nameVoiceBtn, usernameVoiceBtn, emailVoiceBtn] = voiceBtns;
+
+const toastVoiceError = (code) => {
+  if (code === "not_supported") {
+    showToast("Voice input is not supported");
+    return;
+  }
+  if (code === "not-allowed" || code === "service-not-allowed") {
+    showToast("Allow microphone access");
+    return;
+  }
+  if (code === "no-speech") {
+    showToast("No speech detected");
+    return;
+  }
+  showToast("Voice input error");
+};
+
+if (nameVoiceBtn && nameInput) {
+  initSpeechRecognition(nameVoiceBtn, nameInput, { lang: "ru-RU", onError: toastVoiceError });
+}
+if (usernameVoiceBtn && usernameInput) {
+  initSpeechRecognition(usernameVoiceBtn, usernameInput, { lang: "ru-RU", onError: toastVoiceError });
+}
+if (emailVoiceBtn && emailInput) {
+  initSpeechRecognition(emailVoiceBtn, emailInput, { lang: "ru-RU", onError: toastVoiceError });
+}
+
+
+
+function initSpeechRecognition(trigger, target, { lang = "ru-RU", onError } = {}) {
+  if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = lang;
+
+    const onStart = () => {
+      trigger.classList.add("recording");
+      trigger.disabled = true;
+    };
+
+    const onEnd = () => {
+      trigger.classList.remove("recording");
+      trigger.disabled = false;
+    };
+
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      recognition.start();
+      onStart();
+    });
+
+    recognition.addEventListener("result", (event) => {
+      const transcript = event.results?.[0]?.[0]?.transcript ?? "";
+      target.value = transcript;
+
+      target.dispatchEvent(new Event("input", { bubbles: true }));
+
+      onEnd();
+    });
+
+    recognition.addEventListener("error", (event) => {
+      if (typeof onError === "function") onError(event.error);
+      onEnd();
+    });
+
+    recognition.addEventListener("end", onEnd);
+  } else {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (typeof onError === "function") onError("not_supported");
+    });
+  }
+}
+
 
 function readForm() {
   return {
